@@ -1,4 +1,12 @@
-export function FenceImage({ type = 'wood', label = 'Fence project' }) {
+export function FenceImage({ type = 'wood', label = 'Fence project', src }) {
+  if (src) {
+    return (
+      <div className={`photo photo-real photo-${type}`} role="img" aria-label={label}>
+        <img src={src} alt={label} loading="lazy" />
+      </div>
+    );
+  }
+
   return (
     <div className={`photo photo-${type}`} role="img" aria-label={label}>
       <div className="sky" />

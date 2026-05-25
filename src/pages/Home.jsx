@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main>
       <section className="hero">
-        <div className="hero-bg"><FenceImage type="vinyl" label="White vinyl privacy fence" /></div>
+        <div className="hero-bg"><FenceImage type="wood" label="Residential wood privacy fence" src="/images/midwest-source/14-a86385_539f1395d74e4ceab5c61f0cd78b34bc-mv2.jpg" /></div>
         <div className="container hero-content">
           <div className="hero-copy">
             <h1>Strong Fences.<br /><span>Lasting Impressions.</span></h1>
@@ -31,14 +31,14 @@ export default function Home() {
         <div className="container split-heading">
           <div><span className="eyebrow">Our Services</span><h2>Fencing Solutions for Every Need</h2><p>From classic wood to maintenance-free vinyl, we offer a wide range of fencing options and services to protect what matters most.</p><Link to="/fence-types/wood-fencing" className="btn">View Fence Types <ArrowRight size={18} /></Link></div>
           <div className="service-card-grid">
-            {services.slice(0,4).map((service) => <Link to={`/services/${service.slug}`} className="service-card" key={service.slug}><FenceImage type={service.image} label={service.title} /><div className="service-body"><span className="round-icon"><BadgeCheck size={24} /></span><h3>{service.title}</h3><p>{service.short}</p></div></Link>)}
+            {services.slice(0,4).map((service) => <Link to={`/services/${service.slug}`} className="service-card" key={service.slug}><FenceImage type={service.image} label={service.title} src={service.imageSrc} /><div className="service-body"><span className="round-icon"><BadgeCheck size={24} /></span><h3>{service.title}</h3><p>{service.short}</p></div></Link>)}
           </div>
         </div>
       </section>
       <section className="section light-band">
         <div className="container two-col">
           <div><span className="eyebrow">Why Customers Choose Us</span><h2>A fence is a real investment. We treat it that way.</h2><p>Customers should feel confident before they ever call. Midwest Fence focuses on clear communication, professional service, quality installation, and recommendations that fit the property instead of pushing a one-size-fits-all answer.</p><ul className="check-list"><li>Clear recommendations before work begins</li><li>Residential and commercial experience</li><li>Custom gate and fabrication capability</li><li>Repair-first guidance when replacement is not necessary</li></ul></div>
-          <div className="photo-stack"><FenceImage type="wood" label="Wood fence" /><div className="stat-card"><strong>Built around trust.</strong><span>Clean process. Quality work. Honest guidance.</span></div></div>
+          <div className="photo-stack"><FenceImage type="wood" label="Wood fence installation" src="/images/midwest-source/39-a86385_e5ba6e909fc04213b9ffd1df440aca7c-mv2.jpg" /><div className="stat-card"><strong>Built around trust.</strong><span>Clean process. Quality work. Honest guidance.</span></div></div>
         </div>
       </section>
       <CTA />
