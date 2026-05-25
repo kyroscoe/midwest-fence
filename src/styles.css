@@ -69,7 +69,7 @@ p { color: var(--muted); line-height: 1.65; font-size: 17px; }
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 58px; align-items: center; }
 .check-list { padding: 0; margin: 24px 0 0; list-style: none; display: grid; gap: 12px; }
 .check-list li { color: #2c3036; font-weight: 650; }
-.check-list li::before { content: '✓'; color: var(--gold-dark); font-weight: 900; margin-right: 10px; }
+.check-list li::before { content: '\2713'; color: var(--gold-dark); font-weight: 900; margin-right: 10px; }
 .photo-stack { position: relative; }
 .stat-card { position: absolute; bottom: -28px; left: -28px; background: white; box-shadow: var(--shadow); border-radius: 12px; padding: 22px; max-width: 260px; border-left: 6px solid var(--gold); }
 .stat-card strong, .stat-card span { display: block; }
@@ -102,6 +102,7 @@ p { color: var(--muted); line-height: 1.65; font-size: 17px; }
 input, textarea, select { width: 100%; border: 1px solid #d9d4cc; padding: 15px 16px; border-radius: 8px; font: inherit; background: #fff; }
 textarea { min-height: 160px; resize: vertical; }
 .muted { color: var(--muted); font-size: 14px; }
+.form-note { margin: -4px 0 0; color: var(--muted); font-size: 14px; line-height: 1.45; }
 .cta-section { padding: 40px 0 78px; }
 .cta-card { background: linear-gradient(135deg, #f3ad2e, #f8c65d); border-radius: 16px; padding: 42px; display: flex; align-items: center; justify-content: space-between; gap: 30px; box-shadow: var(--shadow); }
 .cta-card h2 { max-width: 760px; }
