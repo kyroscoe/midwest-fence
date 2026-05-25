@@ -28,7 +28,6 @@ export default function Layout({ children }) {
           </div>
           <NavLink to="/gallery" className={navClass}>Gallery</NavLink>
           <NavLink to="/about" className={navClass}>About Us</NavLink>
-          <NavLink to="/resources" className={navClass}>Resources <ChevronDown size={14} /></NavLink>
           <NavLink to="/faq" className={navClass}>FAQ</NavLink>
           <NavLink to="/contact" className={navClass}>Contact</NavLink>
         </nav>

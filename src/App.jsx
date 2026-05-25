@@ -6,7 +6,6 @@ import ServicePage from './pages/ServicePage.jsx';
 import FenceTypePage from './pages/FenceTypePage.jsx';
 import Gallery from './pages/Gallery.jsx';
 import About from './pages/About.jsx';
-import Resources from './pages/Resources.jsx';
 import FAQ from './pages/FAQ.jsx';
 import Contact from './pages/Contact.jsx';
 import { services, fenceTypes } from './data/siteData.js';
@@ -25,7 +24,6 @@ export default function App() {
         ))}
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/about" element={<About />} />
-        <Route path="/resources" element={<Resources />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

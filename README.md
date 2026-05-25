@@ -29,4 +29,3 @@ The production files will be generated in `dist/`.
 - Optimize project photos for faster page loads before launch.
 - Connect the contact form to Formspree, Netlify Forms, a CRM, or custom backend.
 - Expand service-area SEO content for the specific Ohio cities Midwest Fence wants to rank for.
-- Add real warranty details before publishing the Warranty/Resources content publicly.
