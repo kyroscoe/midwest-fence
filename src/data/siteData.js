@@ -1,7 +1,7 @@
 export const phone = '(937) 717-6150';
 export const email = 'midwestfencellc@gmail.com';
 export const serviceAreaShort = 'Dayton, Springfield, Columbus & nearby Ohio communities';
-export const serviceArea = 'Dayton, OH · West Jefferson, OH · Urbana, OH · Springfield, OH · Centerville, OH · Kettering, OH · London, OH · Mechanicsburg, OH · Enon, OH · Columbus, OH';
+export const serviceArea = 'Dayton, OH, West Jefferson, OH, Urbana, OH, Springfield, OH, Centerville, OH, Kettering, OH, London, OH, Mechanicsburg, OH, Enon, OH, Columbus, OH';
 
 export const services = [
   {

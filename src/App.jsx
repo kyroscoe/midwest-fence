@@ -5,9 +5,9 @@ import Services from './pages/Services.jsx';
 import ServicePage from './pages/ServicePage.jsx';
 import FenceTypePage from './pages/FenceTypePage.jsx';
 import Gallery from './pages/Gallery.jsx';
-import About from './pages/About.jsx';
 import FAQ from './pages/FAQ.jsx';
 import Contact from './pages/Contact.jsx';
+import NotFound from './pages/NotFound.jsx';
 import { services, fenceTypes } from './data/siteData.js';
 
 export default function App() {
@@ -23,9 +23,9 @@ export default function App() {
           <Route key={type.slug} path={`/fence-types/${type.slug}`} element={<FenceTypePage type={type} />} />
         ))}
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/about" element={<About />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>
   );

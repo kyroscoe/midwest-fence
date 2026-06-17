@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main>
       <section className="hero">
-        <div className="hero-bg"><FenceImage type="wood" label="Residential wood privacy fence" src="/images/midwest-source/14-a86385_539f1395d74e4ceab5c61f0cd78b34bc-mv2.jpg" /></div>
+        <div className="hero-bg"><FenceImage type="wood" label="Residential wood privacy fence" src="/images/midwest-source/14-a86385_539f1395d74e4ceab5c61f0cd78b34bc-mv2.jpg" loading="eager" fetchPriority="high" /></div>
         <div className="container hero-content">
           <div className="hero-copy">
             <h1>Strong Fences.<br /><span>Lasting Impressions.</span></h1>

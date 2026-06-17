@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { ChevronDown, Clock, MapPin, Phone } from 'lucide-react';
+import { ChevronDown, Clock, MapPin, Menu, Phone, X } from 'lucide-react';
 import logo from '../assets/midwest-logo.png';
 import { email, phone, serviceArea, serviceAreaShort } from '../data/siteData.js';
 
 export default function Layout({ children }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navClass = ({ isActive }) => isActive ? 'nav-link active' : 'nav-link';
   const fenceNavClass = ({ isActive }) => isActive ? 'nav-link dropdown-toggle active' : 'nav-link dropdown-toggle';
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <div className="site-shell">
@@ -14,22 +17,24 @@ export default function Layout({ children }) {
         <div className="top-right"><Clock size={16} /> Mon - Fri: 7AM - 5PM <Phone size={16} /> <a href="tel:+19377176150">{phone}</a></div>
       </div>
       <header className="main-header">
-        <Link to="/" className="brand"><img src={logo} alt="Midwest Fence LLC" /></Link>
-        <nav className="nav">
-          <NavLink to="/" className={navClass}>Home</NavLink>
+        <Link to="/" className="brand" onClick={closeMenu}><img src={logo} alt="Midwest Fence LLC" /></Link>
+        <button className="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded={isMenuOpen} aria-controls="site-nav" onClick={() => setIsMenuOpen((open) => !open)}>
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+        <nav id="site-nav" className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+          <NavLink to="/" className={navClass} onClick={closeMenu}>Home</NavLink>
           <div className="nav-dropdown">
-            <NavLink to="/fence-types/wood-fencing" className={fenceNavClass}>Fence Types <ChevronDown size={14} /></NavLink>
+            <NavLink to="/fence-types/wood-fencing" className={fenceNavClass} onClick={closeMenu}>Fence Types <ChevronDown size={14} /></NavLink>
             <div className="dropdown-menu">
-              <Link to="/fence-types/wood-fencing">Wood Fencing</Link>
-              <Link to="/fence-types/vinyl-fencing">Vinyl Fencing</Link>
-              <Link to="/fence-types/chain-link-fencing">Chain Link Fencing</Link>
-              <Link to="/fence-types/aluminum-fencing">Aluminum Fencing</Link>
+              <Link to="/fence-types/wood-fencing" onClick={closeMenu}>Wood Fencing</Link>
+              <Link to="/fence-types/vinyl-fencing" onClick={closeMenu}>Vinyl Fencing</Link>
+              <Link to="/fence-types/chain-link-fencing" onClick={closeMenu}>Chain Link Fencing</Link>
+              <Link to="/fence-types/aluminum-fencing" onClick={closeMenu}>Aluminum Fencing</Link>
             </div>
           </div>
-          <NavLink to="/gallery" className={navClass}>Gallery</NavLink>
-          <NavLink to="/about" className={navClass}>About Us</NavLink>
-          <NavLink to="/faq" className={navClass}>FAQ</NavLink>
-          <NavLink to="/contact" className={navClass}>Contact</NavLink>
+          <NavLink to="/gallery" className={navClass} onClick={closeMenu}>Gallery</NavLink>
+          <NavLink to="/faq" className={navClass} onClick={closeMenu}>FAQ</NavLink>
+          <NavLink to="/contact" className={navClass} onClick={closeMenu}>Contact</NavLink>
         </nav>
         <Link to="/contact" className="btn estimate-btn">Get a Free Estimate</Link>
       </header>

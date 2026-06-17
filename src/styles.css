@@ -18,6 +18,7 @@ img { max-width: 100%; display: block; }
 .top-right { gap: 20px !important; }
 .main-header { min-height: 98px; padding: 0 48px; display: flex; align-items: center; justify-content: space-between; background: white; box-shadow: 0 6px 20px rgba(0,0,0,.06); position: sticky; top: 0; z-index: 20; }
 .brand img { width: 230px; height: auto; }
+.menu-toggle { display: none; width: 46px; height: 46px; border: 1px solid #eee2cf; border-radius: 6px; background: white; color: var(--ink); align-items: center; justify-content: center; cursor: pointer; }
 .nav { display: flex; align-items: center; gap: 26px; font-weight: 700; }
 .nav-link { display: flex; gap: 4px; align-items: center; padding: 38px 0 32px; border-bottom: 2px solid transparent; }
 .nav-link.active, .nav-link:hover { color: var(--gold-dark); border-bottom-color: var(--gold); }
@@ -138,7 +139,16 @@ textarea { min-height: 160px; resize: vertical; }
 .photo-clearing::after { content:''; position:absolute; inset: 38% 0 0; background: radial-gradient(circle at 18% 55%, #4d7b2f 0 8%, transparent 9%), radial-gradient(circle at 46% 50%, #537f32 0 11%, transparent 12%), radial-gradient(circle at 78% 56%, #436f29 0 9%, transparent 10%); }
 .photo-repair .post:nth-child(4) { transform: rotate(9deg); transform-origin: bottom; background: #b27535; }
 @media (max-width: 1050px) {
-  .nav { display: none; }
+  .menu-toggle { display: inline-flex; }
+  .nav { position: absolute; top: 100%; left: 0; right: 0; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 20px 18px; background: white; border-top: 1px solid #eee2cf; box-shadow: 0 18px 28px rgba(0,0,0,.08); }
+  .nav.nav-open { display: flex; }
+  .nav-link { padding: 14px 0; border-bottom: 1px solid #eee2cf; }
+  .nav-link.active, .nav-link:hover { border-bottom-color: #eee2cf; }
+  .nav-dropdown { border-bottom: 1px solid #eee2cf; }
+  .nav-dropdown .nav-link { border-bottom: 0; }
+  .dropdown-menu { position: static; transform: none; min-width: 0; padding: 0 0 10px 14px; border: 0; border-radius: 0; box-shadow: none; opacity: 1; pointer-events: auto; }
+  .dropdown-menu a { padding: 9px 0; }
+  .nav-dropdown:hover .dropdown-menu, .nav-dropdown:focus-within .dropdown-menu { transform: none; }
   .trust-card { grid-template-columns: repeat(3, 1fr); }
   .trust-item:nth-child(3) { border-right: 0; }
   .split-heading, .two-col, .contact-grid { grid-template-columns: 1fr; }

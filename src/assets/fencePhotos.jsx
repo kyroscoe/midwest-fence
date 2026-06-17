@@ -1,8 +1,8 @@
-export function FenceImage({ type = 'wood', label = 'Fence project', src }) {
+export function FenceImage({ type = 'wood', label = 'Fence project', src, loading = 'lazy', fetchPriority }) {
   if (src) {
     return (
       <div className={`photo photo-real photo-${type}`} role="img" aria-label={label}>
-        <img src={src} alt={label} loading="lazy" />
+        <img src={src} alt={label} loading={loading} fetchPriority={fetchPriority} />
       </div>
     );
   }
